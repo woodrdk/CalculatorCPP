@@ -10,7 +10,7 @@
 using namespace std;
 
 
-enum Operator { Add, Subtract, Multiply, Divide };
+enum class Operator { Add, Subtract, Multiply, Divide };
 
 void displayInstructions();
 int calculate(Operator mathOperator, int firstOperand, int secondOperand);
@@ -64,7 +64,17 @@ int main() {
 
 int calculate(Operator mathOperator, int firstOperand, int secondOperand) {
 	// TO DO: implement this function
-	return 0;
+
+	switch (mathOperator) {
+		case Operator::Add:
+			return firstOperand + secondOperand;
+		case Operator::Subtract:
+			return firstOperand - secondOperand;
+		case Operator::Multiply:
+			return firstOperand * secondOperand;
+		case Operator::Divide:
+			return firstOperand / secondOperand;
+	}
 }
 
 void displayInstructions() {
